@@ -1,11 +1,27 @@
-<!-- /snippets/header.liquid -->
 <header class="site-header">
-  <h1>{{ shop.name }}</h1>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/collections/all">Shop</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="header-top">
+    <div class="container">
+      <div class="header-left">
+        <p>Welcome to our store!</p>
+      </div>
+      <div class="header-right">
+        <a href="/account">My Account</a>
+        <a href="/cart">Cart</a>
+      </div>
+    </div>
+  </div>
+  <div class="header-middle">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}">
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/collections/all">Shop</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>

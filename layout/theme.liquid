@@ -1,14 +1,14 @@
-<!-- /layout/theme.liquid -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page_title }}</title>
+  <title>{{ page_title }} - {{ shop.name }}</title>
   <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}">
   <script src="{{ 'scripts.js' | asset_url }}"></script>
 </head>
 <body>
   {% include 'header' %}
+  {% section 'top-notice' %}
   {{ content_for_layout }}
   {% include 'footer' %}
 </body>

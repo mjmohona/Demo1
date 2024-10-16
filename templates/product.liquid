@@ -1,0 +1,44 @@
+<section class="product-page">
+  <div class="container">
+    <div class="product-single-container">
+      <div class="product-single-gallery">
+        <div class="product-slider-container">
+          <div class="product-single-carousel">
+            {% for image in product.images %}
+            <div class="product-item">
+              <img src="{{ image.src | img_url: 'master' }}" alt="{{ product.title }}">
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="prod-thumbnail">
+          {% for image in product.images %}
+          <div class="owl-dot">
+            <img src="{{ image.src | img_url: 'compact' }}" alt="{{ product.title }}">
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="product-single-details">
+        <h1 class="product-title">{{ product.title }}</h1>
+        <div class="price-box">
+          <span class="old-price">{{ product.compare_at_price | money }}</span>
+          <span class="new-price">{{ product.price | money }}</span>
+        </div>
+        <div class="product-desc">
+          <p>{{ product.description }}</p>
+        </div>
+        <div class="product-action">
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id">
+              {% for variant in product.variants %}
+              <option value="{{ variant.id }}">{{ variant.title }}</option>
+              {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-dark">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
