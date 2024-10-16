@@ -1,0 +1,45 @@
+<div class="home-slider category-home-slider owl-carousel">
+    {%- assign product_json = '{ "products": [' -%}
+
+    {% for product in collections.all.products %}
+        {%- if forloop.first == false -%}
+            {%- assign product_json = product_json | append: ',' -%}
+        {%- endif -%}
+        {%- assign product_json = product_json | append: '{
+            "title": "' | append: product.title | append: '",
+            "url": "' | append: product.url | append: '",
+            "price": "' | append: product.price | money | append: '",
+            "compare_at_price": "' | append: product.compare_at_price | money | append: '",
+            "image": "' | append: product.featured_image | img_url: "205x205" | append: '"
+        }' -%}
+    {% endfor %}
+
+    {%- assign product_json = product_json | append: ']}' -%}
+
+    <script type="application/json" id="products-data">
+        {{ product_json }}
+    </script>
+
+    {% for product in collections.all.products %}
+    <div class="col-6 col-sm-4 col-md-3">
+        <div class="product-default inner-quickview inner-icon">
+            <figure class="img-effect">
+                <a href="{{ product.url }}">
+                    <img src="{{ product.featured_image | img_url: '205x205' }}" alt="{{ product.title }}">
+                </a>
+            </figure>
+            <div class="product-details">
+                <h3 class="product-title">
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                </h3>
+                <div class="price-box">
+                    {% if product.compare_at_price > product.price %}
+                    <span class="old-price">${{ product.compare_at_price | money }}</span>
+                    {% endif %}
+                    <span class="product-price">${{ product.price | money }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

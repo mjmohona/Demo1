@@ -16,7 +16,7 @@
     <div class="page-wrapper">
         {% include 'header' %} <!-- Include header snippet -->
 
-        <main class="main about">
+        <main class="main">
             {{ content_for_layout }} <!-- Dynamic content for all pages -->
         </main>
 
@@ -34,5 +34,7 @@
     <script src="{{ 'jquery.min.js' | asset_url }}"></script>
     <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}"></script>
     <script src="{{ 'main.min.js' | asset_url }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="{{ 'map.js' | asset_url }}"></script>
 </body>
 </html>

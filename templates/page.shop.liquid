@@ -1,0 +1,26 @@
+{% layout 'theme' %}
+
+{% section 'header' %}
+
+<main class="main">
+    <div class="container">
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ shop.url }}"><i class="icon-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">Men</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Accessories</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-lg-9 mb-1">
+                {% section 'product-grid' %}
+            </div>
+            <div class="col-lg-3">
+                {% section 'sidebar' %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% section 'footer' %}
