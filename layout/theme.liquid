@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>{{ page_title }} - {{ shop.name }}</title>
-  <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}">
-  <script src="{{ 'scripts.js' | asset_url }}"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{ page_title }} - {{ shop.name }}</title>
+
+    <link rel="icon" type="image/x-icon" href="{{ 'favicon.png' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}">
+    <script src="{{ 'scripts.js' | asset_url }}"></script>
 </head>
+
 <body>
-  {% include 'header' %}
-  {% section 'top-notice' %}
-  {{ content_for_layout }}
-  {% include 'footer' %}
+    <div class="page-wrapper">
+        {% include 'header' %} <!-- Include header snippet -->
+
+        <main class="main about">
+            {{ content_for_layout }} <!-- Dynamic content for all pages -->
+        </main>
+
+        {% include 'footer' %} <!-- Include footer snippet -->
+    </div>
+
+    <div class="loading-overlay">
+        <div class="bounce-loader">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}"></script>
+    <script src="{{ 'main.min.js' | asset_url }}"></script>
 </body>
 </html>

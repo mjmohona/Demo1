@@ -1,16 +1,15 @@
 {
-    "general": {
-      "accessibility": {
-        "skip_to_content": "Skip to content"
-      },
-      "meta": {
-        "tags": "Tags",
-        "view_all": "View all"
-      },
-      "pagination": {
-        "previous": "Previous",
-        "next": "Next"
-      }
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content"
+    },
+    "meta": {
+      "tags": "Tags",
+      "view_all": "View all"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
     }
   }
-  
+}
