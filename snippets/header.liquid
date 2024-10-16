@@ -2,87 +2,370 @@
     <div class="header-top bg-primary text-uppercase">
         <div class="container">
             <div class="header-left">
-                <div class="header-dropdown">
-                    <a href="#"><i class="flag-us flag"></i>ENG</a>
+                <div class="header-dropdown mr-auto mr-sm-3 mr-md-0">
+                    <a href="#" class="pl-0"><i class="flag-us flag"></i>ENG</a>
                     <div class="header-menu">
                         <ul>
-                            <li><a href="#"><i class="flag-us flag"></i>ENG</a></li>
-                            <li><a href="#"><i class="flag-fr flag"></i>FRA</a></li>
+                            <li><a href="#"><i class="flag-us flag mr-2"></i>ENG</a></li>
+                            <li><a href="#"><i class="flag-fr flag mr-2"></i>FRA</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-dropdown ml-3 pl-1">
+                    <a href="#">USD</a>
+                    <div class="header-menu">
+                        <ul>
+                            <li><a href="#">EUR</a></li>
+                            <li><a href="#">USD</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="header-right">
-                <p class="top-message mb-0">Welcome To Porto!</p>
-                <div class="header-dropdown">
+            <div class="header-right header-dropdowns ml-0 ml-sm-auto">
+                <p class="top-message mb-0 d-none d-sm-block">Welcome To Porto!</p>
+                <div class="header-dropdown dropdown-expanded mr-3">
                     <a href="#">Links</a>
                     <div class="header-menu">
                         <ul>
-                            <li><a href="dashboard.html">My Account</a></li>
-                            <li><a href="demo1-contact.html">Contact Us</a></li>
-                            <li><a href="wishlist.html">My Wishlist</a></li>
+                            <li><a href="/account">My Account</a></li>
+                            <li><a href="/pages/contact-us">Contact Us</a></li>
+                            <li><a href="/wishlist">My Wishlist</a></li>
                             <li><a href="#">Site Map</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="login.html" class="login-link">Log In</a></li>
+                            <li><a href="/cart">Cart</a></li>
+                            <li><a href="/account/login" class="login-link">Log In</a></li>
                         </ul>
                     </div>
                 </div>
+                <span class="separator"></span>
                 <div class="social-icons">
-                    <a href="#" class="social-icon social-facebook" target="_blank"></a>
-                    <a href="#" class="social-icon social-twitter" target="_blank"></a>
-                    <a href="#" class="social-icon social-instagram" target="_blank"></a>
+                    <a href="#" class="social-icon social-facebook icon-facebook" target="_blank"></a>
+                    <a href="#" class="social-icon social-twitter icon-twitter" target="_blank"></a>
+                    <a href="#" class="social-icon social-instagram icon-instagram" target="_blank"></a>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="header-middle sticky-header">
+    <div class="header-middle text-dark sticky-header" data-sticky-options="{'mobile': true}">
         <div class="container">
-            <div class="header-left">
-                <button class="mobile-menu-toggler"><i class="fas fa-bars"></i></button>
-                <a href="{{ shop.url }}" class="logo">
+            <div class="header-left col-lg-2 w-auto pl-0">
+                <button class="mobile-menu-toggler mr-2" type="button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="/" class="logo">
                     <img src="{{ 'logo.png' | asset_url }}" alt="Porto Logo">
                 </a>
             </div>
-
-            <div class="header-right">
-                <div class="header-search">
+            <div class="header-right w-lg-max pl-2">
+                <div class="header-search header-icon header-search-inline header-search-category w-lg-max">
                     <a href="#" class="search-toggle" role="button"><i class="icon-search-3"></i></a>
-                    <form action="#" method="get">
+                    <form action="/search" method="get">
                         <div class="header-search-wrapper">
-                            <input type="search" name="q" placeholder="Search..." required>
+                            <input type="search" class="form-control" name="q" id="q" placeholder="Search..." required>
                             <div class="select-custom">
                                 <select id="cat" name="cat">
                                     <option value="">All Categories</option>
-                                    <!-- Add more categories dynamically -->
+                                    <option value="4">Fashion</option>
+                                    <option value="12">- Women</option>
+                                    <option value="13">- Men</option>
+                                    <option value="66">- Jewellery</option>
+                                    <option value="67">- Kids Fashion</option>
+                                    <option value="5">Electronics</option>
+                                    <option value="21">- Smart TVs</option>
+                                    <option value="22">- Cameras</option>
+                                    <option value="63">- Games</option>
+                                    <option value="7">Home & Garden</option>
+                                    <option value="11">Motors</option>
+                                    <option value="31">- Cars and Trucks</option>
+                                    <option value="32">- Motorcycles & Powersports</option>
+                                    <option value="33">- Parts & Accessories</option>
+                                    <option value="34">- Boats</option>
+                                    <option value="57">- Auto Tools & Supplies</option>
                                 </select>
                             </div>
-                            <button class="btn icon-search" type="submit"></button>
+                            <button class="btn icon-magnifier" type="submit"></button>
                         </div>
                     </form>
                 </div>
-
-                <a href="login.html" class="header-icon"><i class="icon-user-2"></i></a>
-                <a href="wishlist.html" class="header-icon"><i class="icon-wishlist-2"></i></a>
-
+                <div class="header-contact d-none d-lg-flex align-items-center pr-xl-5 mr-5 mr-xl-3 ml-5">
+                    <i class="icon-phone-2"></i>
+                    <h6 class="pt-1 line-height-1">Call us now<a href="tel:#" class="d-block text-dark ls-10 pt-1">+123 5678 890</a></h6>
+                </div>
+                <a href="/account/login" class="header-icon header-icon-user"><i class="icon-user-2"></i></a>
+                <a href="/wishlist" class="header-icon"><i class="icon-wishlist-2"></i></a>
                 <div class="dropdown cart-dropdown">
-                    <a href="#" class="dropdown-toggle cart-toggle" data-toggle="dropdown">
+                    <a href="#" title="Cart" class="dropdown-toggle dropdown-arrow cart-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                         <i class="minicart-icon"></i>
                         <span class="cart-count badge-circle">3</span>
                     </a>
+                    <div class="cart-overlay"></div>
                     <div class="dropdown-menu mobile-cart">
-                        <a href="#" class="btn-close">×</a>
-                        <div class="dropdown-cart-header">Shopping Cart</div>
-                        <div class="dropdown-cart-products">
-                            <!-- Populate cart items dynamically -->
+                        <a href="#" title="Close (Esc)" class="btn-close">×</a>
+                        <div class="dropdownmenu-wrapper custom-scrollbar">
+                            <div class="dropdown-cart-header">Shopping Cart</div>
+                            <div class="dropdown-cart-products">
+                                <div class="product">
+                                    <div class="product-details">
+                                        <h4 class="product-title"><a href="/products/ultimate-3d-bluetooth-speaker">Ultimate 3D Bluetooth Speaker</a></h4>
+                                        <span class="cart-product-info"><span class="cart-product-qty">1</span> × $99.00</span>
+                                    </div>
+                                    <figure class="product-image-container">
+                                        <a href="/products/ultimate-3d-bluetooth-speaker" class="product-image">
+                                            <img src="{{ 'product-1.jpg' | asset_url }}" alt="product" width="80" height="80">
+                                        </a>
+                                        <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
+                                    </figure>
+                                </div>
+                                <div class="product">
+                                    <div class="product-details">
+                                        <h4 class="product-title"><a href="/products/brown-women-casual-handbag">Brown Women Casual HandBag</a></h4>
+                                        <span class="cart-product-info"><span class="cart-product-qty">1</span> × $35.00</span>
+                                    </div>
+                                    <figure class="product-image-container">
+                                        <a href="/products/brown-women-casual-handbag" class="product-image">
+                                            <img src="{{ 'product-2.jpg' | asset_url }}" alt="product" width="80" height="80">
+                                        </a>
+                                        <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
+                                    </figure>
+                                </div>
+                                <div class="product">
+                                    <div class="product-details">
+                                        <h4 class="product-title"><a href="/products/circled-ultimate-3d-speaker">Circled Ultimate 3D Speaker</a></h4>
+                                        <span class="cart-product-info"><span class="cart-product-qty">1</span> × $35.00</span>
+                                    </div>
+                                    <figure class="product-image-container">
+                                        <a href="/products/circled-ultimate-3d-speaker" class="product-image">
+                                            <img src="{{ 'product-3.jpg' | asset_url }}" alt="product" width="80" height="80">
+                                        </a>
+                                        <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="dropdown-cart-total">
+                                <span>SUBTOTAL:</span>
+                                <span class="cart-total-price float-right">$134.00</span>
+                            </div>
+                            <div class="dropdown-cart-action">
+                                <a href="/cart" class="btn btn-gray btn-block view-cart">View Cart</a>
+                                <a href="/checkout" class="btn btn-dark btn-block">Checkout</a>
+                            </div>
                         </div>
-                        <div class="dropdown-cart-total">
-                            <span>SUBTOTAL:</span>
-                            <span class="cart-total-price float-right">$134.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom sticky-header d-none d-lg-block bg-gray" data-sticky-options="{'mobile': false}">
+        <div class="container">
+            <div class="header-left">
+                <a href="/" class="logo">
+                    <img src="{{ 'logo.png' | asset_url }}" alt="Porto Logo">
+                </a>
+            </div>
+            <div class="header-center">
+                <nav class="main-nav w-100">
+                    <ul class="menu">
+                        <li><a href="/">Home</a></li>
+                        <li class="active"><a href="/collections/all">Categories</a>
+                            <div class="megamenu megamenu-fixed-width megamenu-3cols">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <a href="#" class="nolink">VARIATION 1</a>
+                                        <ul class="submenu">
+                                            <li><a href="/collections/fullwidth-banner">Fullwidth Banner</a></li>
+                                            <li><a href="/collections/boxed-slider-banner">Boxed Slider Banner</a></li>
+                                            <li><a href="/collections/boxed-image-banner">Boxed Image Banner</a></li>
+                                            <li><a href="/collections/left-sidebar">Left Sidebar</a></li>
+                                            <li><a href="/collections/right-sidebar">Right Sidebar</a></li>
+                                            <li><a href="/collections/off-canvas-filter">Off Canvas Filter</a></li>
+                                            <li><a href="/collections/horizontal-filter1">Horizontal Filter1</a></li>
+                                            <li><a href="/collections/horizontal-filter2">Horizontal Filter2</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <a href="#" class="nolink">VARIATION 2</a>
+                                        <ul class="submenu">
+                                            <li><a href="/collections/list-types">List Types</a></li>
+                                            <li><a href="/collections/infinite-scroll">Ajax Infinite Scroll</a></li>
+                                            <li><a href="/collections/3-columns-products">3 Columns Products</a></li>
+                                            <li><a href="/collections/4-columns-products">4 Columns Products</a></li>
+                                            <li><a href="/collections/5-columns-products">5 Columns Products</a></li>
+                                            <li><a href="/collections/6-columns-products">6 Columns Products</a></li>
+                                            <li><a href="/collections/7-columns-products">7 Columns Products</a></li>
+                                            <li><a href="/collections/8-columns-products">8 Columns Products</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 p-0">
+                                        <div class="menu-banner">
+                                            <figure>
+                                                <img src="{{ 'menu-banner.jpg' | asset_url }}" alt="Menu banner" width="300" height="300">
+                                            </figure>
+                                            <div class="banner-content">
+                                                <h4><span class="">UP TO</span><br /><b class="">50%</b><i>OFF</i></h4>
+                                                <a href="/collections/all" class="btn btn-sm btn-dark">SHOP NOW</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="/products">Products</a>
+                            <div class="megamenu megamenu-fixed-width">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <a href="#" class="nolink">PRODUCT PAGES</a>
+                                        <ul class="submenu">
+                                            <li><a href="/products/simple-product">SIMPLE PRODUCT</a></li>
+                                            <li><a href="/products/variable-product">VARIABLE PRODUCT</a></li>
+                                            <li><a href="/products/sale-product">SALE PRODUCT</a></li>
+                                            <li><a href="/products/featured-and-on-sale">FEATURED & ON SALE</a></li>
+                                            <li><a href="/products/with-custom-tab">WITH CUSTOM TAB</a></li>
+                                            <li><a href="/products/with-left-sidebar">WITH LEFT SIDEBAR</a></li>
+                                            <li><a href="/products/with-right-sidebar">WITH RIGHT SIDEBAR</a></li>
+                                            <li><a href="/products/add-cart-sticky">ADD CART STICKY</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <a href="#" class="nolink">PRODUCT LAYOUTS</a>
+                                        <ul class="submenu">
+                                            <li><a href="/products/extended-layout">EXTENDED LAYOUT</a></li>
+                                            <li><a href="/products/grid-image">GRID IMAGE</a></li>
+                                            <li><a href="/products/full-width-layout">FULL WIDTH LAYOUT</a></li>
+                                            <li><a href="/products/sticky-info">STICKY INFO</a></li>
+                                            <li><a href="/products/left-and-right-sticky">LEFT & RIGHT STICKY</a></li>
+                                            <li><a href="/products/transparent-image">TRANSPARENT IMAGE</a></li>
+                                            <li><a href="/products/center-vertical">CENTER VERTICAL</a></li>
+                                            <li><a href="#">BUILD YOUR OWN</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 p-0">
+                                        <div class="menu-banner menu-banner-2">
+                                            <figure>
+                                                <img src="{{ 'menu-banner-1.jpg' | asset_url }}" alt="Menu banner" class="product-promo" width="380" height="790">
+                                            </figure>
+                                            <i>OFF</i>
+                                            <div class="banner-content">
+                                                <h4><span class="">UP TO</span><br /><b class="">50%</b></h4>
+                                            </div>
+                                            <a href="/collections/all" class="btn btn-sm btn-dark">SHOP NOW</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#">Pages</a>
+                            <ul>
+                                <li><a href="/wishlist">Wishlist</a></li>
+                                <li><a href="/cart">Shopping Cart</a></li>
+                                <li><a href="/checkout">Checkout</a></li>
+                                <li><a href="/account">Dashboard</a></li>
+                                <li><a href="/pages/about-us">About Us</a></li>
+                                <li><a href="#">Blog</a>
+                                    <ul>
+                                        <li><a href="/blogs/news">Blog</a></li>
+                                        <li><a href="/blogs/news/single-post">Blog Post</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/pages/contact-us">Contact Us</a></li>
+                                <li><a href="/account/login">Login</a></li>
+                                <li><a href="/account/recover">Forgot Password</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/blogs/news">Blog</a></li>
+                        <li><a href="/pages/contact-us">Contact Us</a></li>
+                        <li class="float-right"><a href="https://1.envato.market/DdLk5" class="pl-5" target="_blank">Buy Porto!</a></li>
+                        <li class="float-right"><a href="#" class="pl-5">Special Offer!</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="header-search header-icon header-search-inline header-search-category w-lg-max">
+                    <a href="#" class="search-toggle" role="button"><i class="icon-search-3"></i></a>
+                    <form action="/search" method="get">
+                        <div class="header-search-wrapper">
+                            <input type="search" class="form-control" name="q" id="qq" placeholder="Search..." required>
+                            <div class="select-custom">
+                                <select id="category" name="cat">
+                                    <option value="">All Categories</option>
+                                    <option value="4">Fashion</option>
+                                    <option value="12">- Women</option>
+                                    <option value="13">- Men</option>
+                                    <option value="66">- Jewellery</option>
+                                    <option value="67">- Kids Fashion</option>
+                                    <option value="5">Electronics</option>
+                                    <option value="21">- Smart TVs</option>
+                                    <option value="22">- Cameras</option>
+                                    <option value="63">- Games</option>
+                                    <option value="7">Home & Garden</option>
+                                    <option value="11">Motors</option>
+                                    <option value="31">- Cars and Trucks</option>
+                                    <option value="32">- Motorcycles & Powersports</option>
+                                    <option value="33">- Parts & Accessories</option>
+                                    <option value="34">- Boats</option>
+                                    <option value="57">- Auto Tools & Supplies</option>
+                                </select>
+                            </div>
+                            <button class="btn p-0 icon-search-3" type="submit"></button>
                         </div>
-                        <div class="dropdown-cart-action">
-                            <a href="cart.html" class="btn btn-gray btn-block view-cart">View Cart</a>
-                            <a href="checkout.html" class="btn btn-dark btn-block">Checkout</a>
+                    </form>
+                </div>
+                <a href="/account/login" class="header-icon login-link"><i class="icon-user-2"></i></a>
+                <a href="/wishlist" class="header-icon"><i class="icon-wishlist-2"></i></a>
+                <div class="dropdown cart-dropdown">
+                    <a href="#" title="Cart" class="dropdown-toggle dropdown-arrow cart-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                        <i class="minicart-icon"></i>
+                        <span class="cart-count badge-circle">3</span>
+                    </a>
+                    <div class="cart-overlay"></div>
+                    <div class="dropdown-menu mobile-cart">
+                        <a href="#" title="Close (Esc)" class="btn-close">×</a>
+                        <div class="dropdownmenu-wrapper custom-scrollbar">
+                            <div class="dropdown-cart-header">Shopping Cart</div>
+                            <div class="dropdown-cart-products">
+                                <div class="product">
+                                    <div class="product-details">
+                                        <h4 class="product-title"><a href="/products/ultimate-3d-bluetooth-speaker">Ultimate 3D Bluetooth Speaker</a></h4>
+                                        <span class="cart-product-info"><span class="cart-product-qty">1</span> × $99.00</span>
+                                    </div>
+                                    <figure class="product-image-container">
+                                        <a href="/products/ultimate-3d-bluetooth-speaker" class="product-image">
+                                            <img src="{{ 'product-1.jpg' | asset_url }}" alt="product" width="80" height="80">
+                                        </a>
+                                        <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
+                                    </figure>
+                                </div>
+                                <div class="product">
+                                    <div class="product-details">
+                                        <h4 class="product-title"><a href="/products/brown-women-casual-handbag">Brown Women Casual HandBag</a></h4>
+                                        <span class="cart-product-info"><span class="cart-product-qty">1</span> × $35.00</span>
+                                    </div>
+                                    <figure class="product-image-container">
+                                        <a href="/products/brown-women-casual-handbag" class="product-image">
+                                            <img src="{{ 'product-2.jpg' | asset_url }}" alt="product" width="80" height="80">
+                                        </a>
+                                        <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
+                                    </figure>
+                                </div>
+                                <div class="product">
+                                    <div class="product-details">
+                                        <h4 class="product-title"><a href="/products/circled-ultimate-3d-speaker">Circled Ultimate 3D Speaker</a></h4>
+                                        <span class="cart-product-info"><span class="cart-product-qty">1</span> × $35.00</span>
+                                    </div>
+                                    <figure class="product-image-container">
+                                        <a href="/products/circled-ultimate-3d-speaker" class="product-image">
+                                            <img src="{{ 'product-3.jpg' | asset_url }}" alt="product" width="80" height="80">
+                                        </a>
+                                        <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="dropdown-cart-total">
+                                <span>SUBTOTAL:</span>
+                                <span class="cart-total-price float-right">$134.00</span>
+                            </div>
+                            <div class="dropdown-cart-action">
+                                <a href="/cart" class="btn btn-gray btn-block view-cart">View Cart</a>
+                                <a href="/checkout" class="btn btn-dark btn-block">Checkout</a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,21 @@
+/* demo1.min.css */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  .header, .footer {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .header a, .footer a {
+    color: #fff;
+  }
+  
+  .header a:hover, .footer a:hover {
+    color: #ccc;
+  }
+  
+  /* Add more custom styles here */
+  

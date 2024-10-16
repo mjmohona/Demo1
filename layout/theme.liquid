@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -158,31 +157,19 @@
 
         <div class="sticky-navbar">
             <div class="sticky-info">
-                <a href="/">
-                    <i class="icon-home"></i>Home
-                </a>
+                <a href="/"><i class="icon-home"></i>Home</a>
             </div>
             <div class="sticky-info">
-                <a href="/collections/all" class="">
-                    <i class="icon-bars"></i>Categories
-                </a>
+                <a href="/collections/all" class=""><i class="icon-bars"></i>Categories</a>
             </div>
             <div class="sticky-info">
-                <a href="/wishlist" class="">
-                    <i class="icon-wishlist-2"></i>Wishlist
-                </a>
+                <a href="/wishlist" class=""><i class="icon-wishlist-2"></i>Wishlist</a>
             </div>
             <div class="sticky-info">
-                <a href="/account" class="">
-                    <i class="icon-user-2"></i>Account
-                </a>
+                <a href="/account/login" class=""><i class="icon-user-2"></i>Account</a>
             </div>
             <div class="sticky-info">
-                <a href="/cart" class="">
-                    <i class="icon-shopping-cart position-relative">
-                        <span class="cart-count badge-circle">3</span>
-                    </i>Cart
-                </a>
+                <a href="/cart" class=""><i class="icon-shopping-cart position-relative"><span class="cart-count badge-circle">3</span></i>Cart</a>
             </div>
         </div>
 
@@ -190,16 +177,7 @@
     </div>
     <!-- End .page-wrapper -->
 
-    <!-- Plugins JS File -->
-    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
-    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}"></script>
-    <script src="{{ 'plugins.min.js' | asset_url }}"></script>
-    <script src="{{ 'nouislider.min.js' | asset_url }}"></script>
-    <script src="{{ 'jquery.plugin.min.js' | asset_url }}"></script>
-    <script src="{{ 'jquery.countdown.min.js' | asset_url }}"></script>
-
-    <!-- Main JS File -->
-    <script src="{{ 'main.min.js' | asset_url }}"></script>
+    <script src="{{ 'theme.js' | asset_url }}"></script> <!-- Main theme JS file -->
 </body>
 
 </html>
