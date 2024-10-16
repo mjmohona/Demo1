@@ -1,0 +1,15 @@
+<!-- /layout/theme.liquid -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page_title }}</title>
+  <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}">
+  <script src="{{ 'scripts.js' | asset_url }}"></script>
+</head>
+<body>
+  {% include 'header' %}
+  {{ content_for_layout }}
+  {% include 'footer' %}
+</body>
+</html>
