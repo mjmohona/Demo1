@@ -1,0 +1,12 @@
+{% for product in collection.products %}
+    <div class="product-item">
+        <h2>{{ product.title }}</h2>
+        {% if product.available %}
+            <p>This product is available.</p>
+            <button>Add to Cart</button>
+        {% else %}
+            <p>This product is not available.</p>
+        {% endif %}
+        <p>Price: {{ product.price | money }}</p>
+    </div>
+{% endfor %}

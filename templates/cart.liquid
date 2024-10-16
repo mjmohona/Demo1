@@ -1,0 +1,11 @@
+{% for item in cart.items %}
+    <div class="cart-item">
+        <h3>{{ item.product.title }}</h3>
+        {% if item.product.available %}
+            <p>This product is available.</p>
+        {% else %}
+            <p>This product is not available.</p>
+        {% endif %}
+        <p>Price: {{ item.price | money }}</p>
+    </div>
+{% endfor %}
