@@ -1,17 +1,11 @@
 // theme.js
 
-$(document).ready(function () {
-    // Mobile menu toggle
-    $('.mobile-menu-toggler').on('click', function () {
-      $('.mobile-menu-overlay').toggleClass('active');
-      $('.mobile-menu-container').toggleClass('active');
-    });
-  
-    // Search toggle
-    $('.search-toggle').on('click', function () {
-      $('.header-search-wrapper').toggleClass('active');
-    });
-  
-    // Custom JS code here
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize tooltips
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
   });
-  
+
+  // Add more JavaScript functionalities as needed
+});
