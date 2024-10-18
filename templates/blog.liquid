@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }} - {{ shop.name }}</title>
+    <link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'demo1.min.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}"></script>
+    <script src="{{ 'main.min.js' | asset_url }}"></script>
+    <style>
+        .blog-container {
+            padding: 2rem;
+        }
+
+        .blog-article {
+            margin-bottom: 2rem;
+        }
+
+        .blog-article img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .blog-article h2 {
+            font-size: 2rem;
+            margin-top: 1rem;
+            color: #333;
+        }
+
+        .blog-article p {
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .blog-article a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .blog-article a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Include your header content here -->
+    </header>
+
+    <main class="blog-container">
+        <h1>{{ blog.title }}</h1>
+        {% for article in blog.articles %}
+            <article class="blog-article">
+                <a href="{{ article.url }}">
+                    {% if article.image %}
+                        <img src="{{ article.image | img_url: 'large' }}" alt="{{ article.title }}">
+                    {% endif %}
+                </a>
+                <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+                <p>{{ article.excerpt | strip_html | truncate: 150 }}</p>
+                <a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+            </article>
+        {% endfor %}
+    </main>
+
+    <footer>
+        <!-- Include your footer content here -->
+    </footer>
+</body>
+
+</html>

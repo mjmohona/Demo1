@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article.title }} - {{ shop.name }}</title>
+    <link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'demo1.min.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}"></script>
+    <script src="{{ 'main.min.js' | asset_url }}"></script>
+    <style>
+        .article-container {
+            padding: 2rem;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .article-meta {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .article-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .article-content {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .article-tags {
+            margin-top: 2rem;
+        }
+
+        .article-tags span {
+            display: inline-block;
+            margin-right: 1rem;
+            padding: 0.3rem 0.6rem;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .article-tags span:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Include your header content here -->
+    </header>
+
+    <main class="article-container">
+        <h1 class="article-title">{{ article.title }}</h1>
+        <div class="article-meta">
+            <span>{{ 'blogs.article.written_by' | t: author: article.author }}</span> |
+            <span>{{ article.published_at | date: "%B %d, %Y" }}</span>
+        </div>
+        {% if article.image %}
+            <img src="{{ article.image | img_url: 'large' }}" alt="{{ article.title }}" class="article-image">
+        {% endif %}
+        <div class="article-content">
+            {{ article.content }}
+        </div>
+        {% if article.tags.size > 0 %}
+            <div class="article-tags">
+                <h4>{{ 'blogs.article.tags' | t }}</h4>
+                {% for tag in article.tags %}
+                    <span>{{ tag }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </main>
+
+    <footer>
+        <!-- Include your footer content here -->
+    </footer>
+</body>
+
+</html>
