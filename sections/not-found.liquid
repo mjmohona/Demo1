@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ 'errors.404.title' | t }}</title>
+    <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'demo1.min.css' | asset_url }}">
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}"></script>
+    <script src="{{ 'main.min.js' | asset_url }}"></script>
+</head>
+<body>
+    <div class="page-wrapper">
+        {% include 'header' %}
+
+        <main class="main">
+            <div class="container">
+                <div class="error-page text-center">
+                    <h1 class="error-code">404</h1>
+                    <h2 class="error-message">{{ 'errors.404.title' | t }}</h2>
+                    <p class="error-description">{{ 'errors.404.description' | t }}</p>
+                    <a href="/" class="btn btn-primary">{{ 'errors.404.button_text' | t }}</a>
+                </div>
+            </div>
+        </main>
+
+        {% include 'footer' %}
+    </div>
+
+    <script>
+        // Custom JS can be added here
+    </script>
+</body>
+</html>
