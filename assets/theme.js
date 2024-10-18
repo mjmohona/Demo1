@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
   tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl);
   });
-
-  // Add more JavaScript functionalities as needed
+// Add more JavaScript functionalities as needed
 });
+ 
